@@ -6,14 +6,18 @@ public class FirstClass {
 	/*Main is a method auto execute in Java*/
 	public static void main(String[] args) {
 		
-		double grade1 = 90;
-		double grade2 = 70;
-		double grade3 = 50;
-		double grade4 = 88;
+		/*Char represents a letter*/
 		
-		double finalAverage = (grade1 + grade2 + grade3 + grade4)/4;
+		char physicalPerson  = 'P';
+		char legalPerson = 'L';
 		
-		System.out.println("Grade average is = "+finalAverage);
+		if(physicalPerson == 'P') {
+			System.out.println("Physical Person");
+		}
+		if(legalPerson == 'L') {
+			System.out.println("Legal Person");
+		}
+		
 	}
 
 }
