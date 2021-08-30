@@ -6,15 +6,14 @@ public class FirstClass {
 	/*Main is a method auto execute in Java*/
 	public static void main(String[] args) {
 		
-		/*String in Java always will be a text*/	
+		/*Concatenation*/	
 		
-		String message = "This message is a test!";
-		String name;
-		String cpf;
-		String telephone;
-		String address;
+		String name = "Wyltamar Douglas";
+		String cpf = "065.324.021-54";
+		String telephone = "83 99964-5517";
+		String address = "Jericó-PB";
 		
-		System.out.println(message);
+		System.out.println("My name is: "+name+" and my pcf is: "+ cpf +" my contact is: " +telephone + " my address is: "+address);
 	}
 
 }
