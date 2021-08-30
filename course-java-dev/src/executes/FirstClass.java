@@ -6,18 +6,15 @@ public class FirstClass {
 	/*Main is a method auto execute in Java*/
 	public static void main(String[] args) {
 		
-		/*Char represents a letter*/
+		/*String in Java always will be a text*/	
 		
-		char physicalPerson  = 'P';
-		char legalPerson = 'L';
+		String message = "This message is a test!";
+		String name;
+		String cpf;
+		String telephone;
+		String address;
 		
-		if(physicalPerson == 'P') {
-			System.out.println("Physical Person");
-		}
-		if(legalPerson == 'L') {
-			System.out.println("Legal Person");
-		}
-		
+		System.out.println(message);
 	}
 
 }
