@@ -1,23 +1,25 @@
 package executes;
 
 public class FirstClass {
+	
+	/*Global variable is accessible for all*/
+	static int globalOlderAge = 30;
+	
+	/*Main is a method auto execute in Java*/
 	public static void main(String[] args) {
 		
+		/*Local variable because belongs only to this method*/
 		int olderAge = 18;
 		
-		int oldAge = 60;
+		method2();
 		
-		int youngerAge = 16;
-		
-		int kidAge = 7; 
-		
-		String cpf = "123.456.789-54";
-		
-		System.out.println("Older age is = "+olderAge);
-		System.out.println("Old age is = "+oldAge);
-		System.out.println("Younger age is = "+youngerAge);
-		System.out.println("Kid age is = "+kidAge);
-		
+		System.out.println("Value of local variable is = "+olderAge);
+
+	}
+	
+	public static void method2() {
+		 globalOlderAge ++;
+		 System.out.println("Value of global variable is =  "+globalOlderAge);
 	}
 
 }
