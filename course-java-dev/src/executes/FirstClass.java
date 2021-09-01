@@ -1,19 +1,27 @@
 package executes;
 
 public class FirstClass {
-	
-	
-	/*Main is a method auto execute in Java*/
+
+	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
+
+		double grade1 = 10;
+		double grade2 = 80;
+		double grade3 = 10;
+		double grade4 = 10;
+		double average = 0;
 		
-		/*Concatenation*/	
+		average = (grade1 + grade2 + grade3 + grade4)/ 4;
 		
-		String name = "Wyltamar Douglas";
-		String cpf = "065.324.021-54";
-		String telephone = "83 99964-5517";
-		String address = "Jericó-PB";
-		
-		System.out.println("My name is: "+name+" and my pcf is: "+ cpf +" my contact is: " +telephone + " my address is: "+address);
+		if(average >= 70) {
+			System.out.println("Approved: "+average);
+		}
+		else if(average >= 40 && average <= 69) {
+			System.out.println("Estudent recovering: "+average);
+		}
+		else {
+			System.out.println("Disapproved: "+average);
+		}
 	}
 
 }
