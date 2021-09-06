@@ -6,32 +6,26 @@ public class FirstClass {
 
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
-		
-		/*Creating a confirmation option */ 
-		
-		int cars = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of cars: "));
-		int persons = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of persons: "));
-		
-		int division = cars / persons;
-		int rest = cars % persons;
-		
-		int answer = JOptionPane.showConfirmDialog(null, "Do you want to see the result of the split?");
-		
-		if(answer == 0) {
-			
-			JOptionPane.showMessageDialog(null, "The division result is: "+division);
-		}else {
-			JOptionPane.showMessageDialog(null, "User don't have want seen the result of the division!");
+
+		/* Creating an averaging program */
+
+		double note1 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 1:"));
+		double note2 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 2:"));
+		double note3 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 3:"));
+		double note4 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 4:"));
+
+		double avarege = (note1 + note2 + note3 + note4) / 4;
+
+		if (avarege >= 50) {
+
+			if (avarege >= 70) {
+				JOptionPane.showMessageDialog(null, "Student approved with avarege: " + avarege);
+			} else {
+				JOptionPane.showMessageDialog(null, "Student in recovery with avarege: " + avarege);
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Student failed with avarege: " + avarege);
 		}
-		
-		answer = JOptionPane.showConfirmDialog(null, "Do you want to see the rest of the split?");
-		
-		if(answer == 0) {
-			JOptionPane.showMessageDialog(null, "The rest of the division is: "+rest);
-		}else {
-			JOptionPane.showMessageDialog(null, "User don't have want seen the rest of the division!");
-		}
-		
 
 	}
 
