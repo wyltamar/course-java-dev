@@ -8,14 +8,14 @@ public class FirstClass {
 		/*Repeating structure FOR with break */ 
 		
 		for(int number = 0; number <= 10; number++) {
-			if(number == 3) {
+			if(number == 3 || number == 6 || number == 9) {
 				
 				System.out.println("I found the number: "+number);
-				System.out.println("I'm stoping...");
-				break;
+				System.out.println("I'm runing...");
+				continue;
 			}
+			System.out.println("Looking for number...");
 		}
-		System.out.println("====================================");
 
 	}
 
