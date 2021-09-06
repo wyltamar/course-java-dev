@@ -1,17 +1,21 @@
 package executes;
 
+import javax.swing.JOptionPane;
+
 public class FirstClass {
 
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
 		
-		/*Divisions and remains with MOD in Java*/ 
+		/*Data input with class JoptionPane */ 
 		
-		double car = 9;
-		double person = 2;
-		double rest = car % person;
+		int cars = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of cars: "));
+		int persons = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of persons: "));
 		
-		System.out.println("The rest is: "+rest+ " car(s)");
+		int division = cars / persons;
+		int rest = cars % persons;
+		
+		JOptionPane.showMessageDialog(null, "The division is "+division+ " car for each person and " +rest + " car(s) left.");
 
 	}
 
