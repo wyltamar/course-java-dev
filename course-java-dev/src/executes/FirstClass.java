@@ -7,7 +7,7 @@ public class FirstClass {
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
 
-		/* Creating an averaging program */
+		/*Creating the class the student - average calculate */
 
 		double note1 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 1:"));
 		double note2 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 2:"));
