@@ -2,31 +2,25 @@ package executes;
 
 import javax.swing.JOptionPane;
 
+import classes.Student;
+
 public class FirstClass {
 
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
 
-		/*Creating the class the student - average calculate */
-
-		double note1 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 1:"));
-		double note2 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 2:"));
-		double note3 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 3:"));
-		double note4 = Double.parseDouble(JOptionPane.showInputDialog("Inform note 4:"));
-
-		double avarege = (note1 + note2 + note3 + note4) / 4;
-
-		if (avarege >= 50) {
-
-			if (avarege >= 70) {
-				JOptionPane.showMessageDialog(null, "Student approved with avarege: " + avarege);
-			} else {
-				JOptionPane.showMessageDialog(null, "Student in recovery with avarege: " + avarege);
-			}
-		} else {
-			JOptionPane.showMessageDialog(null, "Student failed with avarege: " + avarege);
-		}
-
+		Student student1 = new Student("Wyltamar");
+		System.out.println("The name of student 1 is: "+student1.name);
+		
+		Student student2 = new Student();
+		student2.name = "Wyltamar Douglas de Sousa Oliveira";
+		System.out.println("The name of student 2 is: "+student2.name);
+		
+		Student student3 = new Student("Wyltamar Oliveira", 38, "02/05/1983");
+		
+		System.out.println("Name: "+student3.name+ "\n"+"Age: "+student3.age+"\n"+"Birth Day: "+student3.birthDate);
+		
+		
 	}
 
 }
