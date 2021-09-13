@@ -10,16 +10,33 @@ public class FirstClass {
 	public static void main(String[] args) {
 
 		Student student1 = new Student("Wyltamar");
-		System.out.println("The name of student 1 is: "+student1.name);
+		System.out.println("The name of student 1 is: "+student1.getName());
 		
 		Student student2 = new Student();
-		student2.name = "Wyltamar Douglas de Sousa Oliveira";
-		System.out.println("The name of student 2 is: "+student2.name);
+		student2.setName("Wyltamar Douglas de Sousa Oliveira"); 
+		System.out.println("The name of student 2 is: "+student2.getName());
 		
-		Student student3 = new Student("Wyltamar Oliveira", 38, "02/05/1983");
+		Student student3 = new Student("Wyltamar Oliveira", 38, "02/05/1983","244566");
+		System.out.println("==============================================");
+		System.out.println("Name: "+student3.getName()+ "\n"+"Age: "+student3.getAge()+"\n"+"Birth Day: "+student3.getBirthDate());
+		System.out.println("General record: "+student3.getGeneralRecord());
+		System.out.println("==============================================");
 		
-		System.out.println("Name: "+student3.name+ "\n"+"Age: "+student3.age+"\n"+"Birth Day: "+student3.birthDate);
+		Student student4 = new Student();
+		student4.setName("Pedro Lucas");
+		student4.setAge(12);
+		student4.setBirthDate("28-01-2010");
+		student4.setGeneralRecord("2553278");
+		student4.setCpfNumber("123.567.098-02");
+		student4.setMatherName("Amanda de Almeida Gonçalves");
+		student4.setFatherName("Wyltamar Douglas de Sousa Oliveira");
+		student4.setEnrollmentDate("05-02-2021");
+		student4.setSchoolName("Escola Alegria do Saber");
+		student4.setSeriesEnrollment("5º ano");
 		
+		System.out.println("Name Student 4: "+student4.getName());
+		System.out.println("Student age: "+student4.getAge());
+		System.out.println("BirthDay: "+student4.getBirthDate());
 		
 	}
 
