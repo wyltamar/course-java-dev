@@ -156,6 +156,13 @@ public class Student {
 		return (grade1 + grade2 + grade3 + grade4)/4;
 	}
 	
+	public boolean getApprovedStudent() {
+		double average = this.getStudentAverage();
+		
+		if(average >= 70) return true;
+		else return false;
+	}
+	
 	
 
 }

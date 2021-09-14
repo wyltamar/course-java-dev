@@ -42,6 +42,7 @@ public class FirstClass {
 		System.out.println("Student age: "+student4.getAge());
 		System.out.println("BirthDay: "+student4.getBirthDate());
 		System.out.println("Student's average: "+student4.getStudentAverage());
+		System.out.println("Did the student pass? "+(student4.getApprovedStudent()? "Approved" : "Anapproved"));
 		
 	}
 
