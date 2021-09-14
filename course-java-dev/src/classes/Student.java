@@ -12,6 +12,11 @@ public class Student {
 	private String enrollmentDate;
 	private String schoolName;
 	private String seriesEnrollment;
+	private double grade1;
+	private double grade2;
+	private double grade3;
+	private double grade4;
+	
 	
 	/*About object constructor*/
 	
@@ -111,6 +116,44 @@ public class Student {
 
 	public void setSeriesEnrollment(String seriesEnrollment) {
 		this.seriesEnrollment = seriesEnrollment;
+	}
+
+	public double getGrade1() {
+		return grade1;
+	}
+
+	public void setGrade1(double grade1) {
+		this.grade1 = grade1;
+	}
+
+	public double getGrade2() {
+		return grade2;
+	}
+
+	public void setGrade2(double grade2) {
+		this.grade2 = grade2;
+	}
+
+	public double getGrade3() {
+		return grade3;
+	}
+
+	public void setGrade3(double grade3) {
+		this.grade3 = grade3;
+	}
+
+	public double getGrade4() {
+		return grade4;
+	}
+
+	public void setGrade4(double grade4) {
+		this.grade4 = grade4;
+	}
+	
+	/*Method responsible for calculating student's average*/
+	
+	public double getStudentAverage() {
+		return (grade1 + grade2 + grade3 + grade4)/4;
 	}
 	
 	

@@ -33,10 +33,15 @@ public class FirstClass {
 		student4.setEnrollmentDate("05-02-2021");
 		student4.setSchoolName("Escola Alegria do Saber");
 		student4.setSeriesEnrollment("5º ano");
+		student4.setGrade1(80);
+		student4.setGrade2(90);
+		student4.setGrade3(100);
+		student4.setGrade4(100);
 		
 		System.out.println("Name Student 4: "+student4.getName());
 		System.out.println("Student age: "+student4.getAge());
 		System.out.println("BirthDay: "+student4.getBirthDate());
+		System.out.println("Student's average: "+student4.getStudentAverage());
 		
 	}
 
