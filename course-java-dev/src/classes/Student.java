@@ -171,6 +171,37 @@ public class Student {
 				+ ", seriesEnrollment=" + seriesEnrollment + ", grade1=" + grade1 + ", grade2=" + grade2 + ", grade3="
 				+ grade3 + ", grade4=" + grade4 + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpfNumber == null) ? 0 : cpfNumber.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (cpfNumber == null) {
+			if (other.cpfNumber != null)
+				return false;
+		} else if (!cpfNumber.equals(other.cpfNumber))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
 	
 	
 	
