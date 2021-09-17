@@ -41,20 +41,9 @@ public class FirstClass {
 		student4.setGrade3(grade3);
 		student4.setGrade4(grade4);
 		
-		System.out.println("Name Student: "+student4.getName());
-		System.out.println("Student age: "+student4.getAge());
-		System.out.println("General Record: "+student4.getGeneralRecord());
-		System.out.println("CPF Number: "+student4.getCpfNumber());
-		System.out.println("BirthDay: "+student4.getBirthDate());
-		System.out.println("General Record:"+student4.getGeneralRecord());
-		System.out.println("CPF number:"+student4.getCpfNumber());
-		System.out.println("Father name: "+student4.getFatherName());
-		System.out.println("Mather name: "+student4.getMatherName());
-		System.out.println("Enrollment date: "+student4.getEnrollmentDate());
-		System.out.println("School name: "+student4.getSchoolName());
-		System.out.println("Student's average: "+student4.getStudentAverage());
-		System.out.println("Series enrollment: "+student4.getSeriesEnrollment());
-		System.out.println("Did the student pass? "+(student4.getApprovedStudent()? "Approved" : "Anapproved"));
+		System.out.println(student4.toString());
+		System.out.println("Student average: "+student4.getStudentAverage());
+		System.out.println("Result: "+(student4.getApprovedStudent()? "Approved" : "Anapproved"));
 		
 	}
 

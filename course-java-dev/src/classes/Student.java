@@ -162,6 +162,16 @@ public class Student {
 		if(average >= 70) return true;
 		else return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", birthDate=" + birthDate + ", generalRecord="
+				+ generalRecord + ", cpfNumber=" + cpfNumber + ", matherName=" + matherName + ", fatherName="
+				+ fatherName + ", enrollmentDate=" + enrollmentDate + ", schoolName=" + schoolName
+				+ ", seriesEnrollment=" + seriesEnrollment + ", grade1=" + grade1 + ", grade2=" + grade2 + ", grade3="
+				+ grade3 + ", grade4=" + grade4 + "]";
+	}
+	
 	
 	
 
