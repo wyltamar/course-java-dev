@@ -19,9 +19,13 @@ public class FirstClass {
 		String enrollmentDate = JOptionPane.showInputDialog("Enter with enrollment date:");
 		String schoolName = JOptionPane.showInputDialog("Enter School name:");
 		String seriesEnrollment = JOptionPane.showInputDialog("Enter series:");
+		String subject1 = JOptionPane.showInputDialog("Enter subject 1:");
 		double grade1 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 1:"));
+		String subject2 = JOptionPane.showInputDialog("Enter subject 2:");
 		double grade2 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 2:"));
+		String subject3 = JOptionPane.showInputDialog("Enter subject 3:");
 		double grade3 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 3:"));
+		String subject4 = JOptionPane.showInputDialog("Enter subject 4:");
 		double grade4 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 4:"));
 		
 		Student student4 = new Student();
@@ -36,9 +40,13 @@ public class FirstClass {
 		student4.setEnrollmentDate(enrollmentDate);
 		student4.setSchoolName(schoolName);
 		student4.setSeriesEnrollment(seriesEnrollment);
+		student4.setSubject1(subject1);
 		student4.setGrade1(grade1);
+		student4.setSubject2(subject2);
 		student4.setGrade2(grade2);
+		student4.setSubject3(subject3);
 		student4.setGrade3(grade3);
+		student4.setSubject4(subject4);
 		student4.setGrade4(grade4);
 		
 		System.out.println(student4.toString());
