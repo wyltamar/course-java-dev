@@ -13,15 +13,15 @@ public class Student {
 	private String schoolName;
 	private String seriesEnrollment;
 	
-	private String subject1;
-	private double grade1;
-	private String subject2;
-	private double grade2;
-	private String subject3;
-	private double grade3;
-	private String subject4;
-	private double grade4;
+	private Subject subject = new Subject();
 	
+	public Subject getSubject() {
+		return subject;
+	}
+	
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
 	
 	/*About object constructor*/
 	
@@ -123,76 +123,8 @@ public class Student {
 		this.seriesEnrollment = seriesEnrollment;
 	}
 
-	public double getGrade1() {
-		return grade1;
-	}
-
-	public void setGrade1(double grade1) {
-		this.grade1 = grade1;
-	}
-
-	public double getGrade2() {
-		return grade2;
-	}
-
-	public void setGrade2(double grade2) {
-		this.grade2 = grade2;
-	}
-
-	public double getGrade3() {
-		return grade3;
-	}
-
-	public void setGrade3(double grade3) {
-		this.grade3 = grade3;
-	}
-
-	public double getGrade4() {
-		return grade4;
-	}
-
-	public void setGrade4(double grade4) {
-		this.grade4 = grade4;
-	}
-	
-	
-	
-	/*Method responsible for calculating student's average*/
-	
-	public String getSubject1() {
-		return subject1;
-	}
-
-	public void setSubject1(String subject1) {
-		this.subject1 = subject1;
-	}
-
-	public String getSubject2() {
-		return subject2;
-	}
-
-	public void setSubject2(String subject2) {
-		this.subject2 = subject2;
-	}
-
-	public String getSubject3() {
-		return subject3;
-	}
-
-	public void setSubject3(String subject3) {
-		this.subject3 = subject3;
-	}
-
-	public String getSubject4() {
-		return subject4;
-	}
-
-	public void setSubject4(String subject4) {
-		this.subject4 = subject4;
-	}
-
-	public double getStudentAverage() {
-		return (grade1 + grade2 + grade3 + grade4)/4;
+		public double getStudentAverage() {
+		return (subject.getGrade1() + subject.getGrade2() + subject.getGrade3() + subject.getGrade4())/4;
 	}
 	
 	public boolean getApprovedStudent() {
@@ -203,15 +135,15 @@ public class Student {
 	}
 
 	
+	
+	
 
 	@Override
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + ", birthDate=" + birthDate + ", generalRecord="
 				+ generalRecord + ", cpfNumber=" + cpfNumber + ", matherName=" + matherName + ", fatherName="
 				+ fatherName + ", enrollmentDate=" + enrollmentDate + ", schoolName=" + schoolName
-				+ ", seriesEnrollment=" + seriesEnrollment + ", subject1=" + subject1 + ", grade1=" + grade1
-				+ ", subject2=" + subject2 + ", grade2=" + grade2 + ", subject3=" + subject3 + ", grade3=" + grade3
-				+ ", subject4=" + subject4 + ", grade4=" + grade4 + "]";
+				+ ", seriesEnrollment=" + seriesEnrollment + ", subject=" + subject + "]";
 	}
 
 	@Override
