@@ -129,7 +129,13 @@ public class Student {
 	}
 
 		public double getStudentAverage() {
-		return 0;
+			
+			double addNote = 0.0;
+			
+			for (Subject subject: subjects) {
+				addNote += subject.getGrade();
+			}
+		return addNote/subjects.size();
 	}
 	
 	public boolean getApprovedStudent() {

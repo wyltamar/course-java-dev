@@ -4,6 +4,10 @@ public class Subject {
 
 	private String subject;
 	private double grade;
+	
+	public Subject() {
+		
+	}
 
 	public String getSubject() {
 		return subject;

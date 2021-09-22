@@ -3,6 +3,7 @@ package executes;
 import javax.swing.JOptionPane;
 
 import classes.Student;
+import classes.Subject;
 
 public class FirstClass {
 
@@ -19,14 +20,7 @@ public class FirstClass {
 		String enrollmentDate = JOptionPane.showInputDialog("Enter with enrollment date:");
 		String schoolName = JOptionPane.showInputDialog("Enter School name:");
 		String seriesEnrollment = JOptionPane.showInputDialog("Enter series:");
-		String subject1 = JOptionPane.showInputDialog("Enter subject 1:");
-		double grade1 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 1:"));
-		String subject2 = JOptionPane.showInputDialog("Enter subject 2:");
-		double grade2 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 2:"));
-		String subject3 = JOptionPane.showInputDialog("Enter subject 3:");
-		double grade3 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 3:"));
-		String subject4 = JOptionPane.showInputDialog("Enter subject 4:");
-		double grade4 = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade 4:"));
+		
 		
 		Student student4 = new Student();
 		
@@ -41,7 +35,29 @@ public class FirstClass {
 		student4.setSchoolName(schoolName);
 		student4.setSeriesEnrollment(seriesEnrollment);
 		
+		Subject subject1 = new Subject();
+		subject1.setSubject("Banco de dados");
+		subject1.setGrade(95);
 		
+		student4.getSubjects().add(subject1);
+		
+		Subject subject2 = new Subject();
+		subject2.setSubject("Matemática");
+		subject2.setGrade(80);
+
+		student4.getSubjects().add(subject2);
+		
+		Subject subject3 = new Subject();
+		subject3.setSubject("Java");
+		subject3.setGrade(100);
+		
+		student4.getSubjects().add(subject3);
+		
+		Subject subject4 = new Subject();
+		subject4.setSubject("Spring");
+		subject4.setGrade(85);
+		
+		student4.getSubjects().add(subject4);
 		
 		System.out.println(student4.toString());
 		System.out.println("Student average: "+student4.getStudentAverage());
