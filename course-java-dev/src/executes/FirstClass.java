@@ -21,8 +21,18 @@ public class FirstClass {
 		String schoolName = JOptionPane.showInputDialog("Enter School name:");
 		String seriesEnrollment = JOptionPane.showInputDialog("Enter series:");
 		
-		
 		Student student4 = new Student();
+		Subject subjects = new Subject();
+		
+		for(int i = 0; i <= 3; i++ ) {
+			String subject = JOptionPane.showInputDialog("Enter with subject "+i);
+			subjects.setSubject(subject);
+			double grade = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade: "+i));
+			subjects.setGrade(grade);
+			
+			student4.getSubjects().add(subjects);
+		}
+		
 		
 		student4.setName(name);
 		student4.setAge(age);
@@ -35,29 +45,7 @@ public class FirstClass {
 		student4.setSchoolName(schoolName);
 		student4.setSeriesEnrollment(seriesEnrollment);
 		
-		Subject subject1 = new Subject();
-		subject1.setSubject("Banco de dados");
-		subject1.setGrade(95);
 		
-		student4.getSubjects().add(subject1);
-		
-		Subject subject2 = new Subject();
-		subject2.setSubject("Matemática");
-		subject2.setGrade(80);
-
-		student4.getSubjects().add(subject2);
-		
-		Subject subject3 = new Subject();
-		subject3.setSubject("Java");
-		subject3.setGrade(100);
-		
-		student4.getSubjects().add(subject3);
-		
-		Subject subject4 = new Subject();
-		subject4.setSubject("Spring");
-		subject4.setGrade(85);
-		
-		student4.getSubjects().add(subject4);
 		
 		System.out.println(student4.toString());
 		System.out.println("Student average: "+student4.getStudentAverage());
