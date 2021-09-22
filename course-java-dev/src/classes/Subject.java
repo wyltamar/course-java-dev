@@ -1,83 +1,37 @@
 package classes;
 
 public class Subject {
-	
-	private String subject1;
-	private double grade1;
-	private String subject2;
-	private double grade2;
-	private String subject3;
-	private double grade3;
-	private String subject4;
-	private double grade4;
-	
-	public String getSubject1() {
-		return subject1;
+
+	private String subject;
+	private double grade;
+
+	public String getSubject() {
+		return subject;
 	}
-	public void setSubject1(String subject1) {
-		this.subject1 = subject1;
+
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
-	public double getGrade1() {
-		return grade1;
+
+	public double getGrade() {
+		return grade;
 	}
-	public void setGrade1(double grade1) {
-		this.grade1 = grade1;
+
+	public void setGrade(double grade) {
+		this.grade = grade;
 	}
-	public String getSubject2() {
-		return subject2;
-	}
-	public void setSubject2(String subject2) {
-		this.subject2 = subject2;
-	}
-	public double getGrade2() {
-		return grade2;
-	}
-	public void setGrade2(double grade2) {
-		this.grade2 = grade2;
-	}
-	public String getSubject3() {
-		return subject3;
-	}
-	public void setSubject3(String subject3) {
-		this.subject3 = subject3;
-	}
-	public double getGrade3() {
-		return grade3;
-	}
-	public void setGrade3(double grade3) {
-		this.grade3 = grade3;
-	}
-	public String getSubject4() {
-		return subject4;
-	}
-	public void setSubject4(String subject4) {
-		this.subject4 = subject4;
-	}
-	public double getGrade4() {
-		return grade4;
-	}
-	public void setGrade4(double grade4) {
-		this.grade4 = grade4;
-	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		long temp;
-		temp = Double.doubleToLongBits(grade1);
+		temp = Double.doubleToLongBits(grade);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(grade2);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(grade3);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(grade4);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((subject1 == null) ? 0 : subject1.hashCode());
-		result = prime * result + ((subject2 == null) ? 0 : subject2.hashCode());
-		result = prime * result + ((subject3 == null) ? 0 : subject3.hashCode());
-		result = prime * result + ((subject4 == null) ? 0 : subject4.hashCode());
+		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -87,43 +41,19 @@ public class Subject {
 		if (getClass() != obj.getClass())
 			return false;
 		Subject other = (Subject) obj;
-		if (Double.doubleToLongBits(grade1) != Double.doubleToLongBits(other.grade1))
+		if (Double.doubleToLongBits(grade) != Double.doubleToLongBits(other.grade))
 			return false;
-		if (Double.doubleToLongBits(grade2) != Double.doubleToLongBits(other.grade2))
-			return false;
-		if (Double.doubleToLongBits(grade3) != Double.doubleToLongBits(other.grade3))
-			return false;
-		if (Double.doubleToLongBits(grade4) != Double.doubleToLongBits(other.grade4))
-			return false;
-		if (subject1 == null) {
-			if (other.subject1 != null)
+		if (subject == null) {
+			if (other.subject != null)
 				return false;
-		} else if (!subject1.equals(other.subject1))
-			return false;
-		if (subject2 == null) {
-			if (other.subject2 != null)
-				return false;
-		} else if (!subject2.equals(other.subject2))
-			return false;
-		if (subject3 == null) {
-			if (other.subject3 != null)
-				return false;
-		} else if (!subject3.equals(other.subject3))
-			return false;
-		if (subject4 == null) {
-			if (other.subject4 != null)
-				return false;
-		} else if (!subject4.equals(other.subject4))
+		} else if (!subject.equals(other.subject))
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "Subject [subject1=" + subject1 + ", grade1=" + grade1 + ", subject2=" + subject2 + ", grade2=" + grade2
-				+ ", subject3=" + subject3 + ", grade3=" + grade3 + ", subject4=" + subject4 + ", grade4=" + grade4
-				+ "]";
+		return "Subject [subject=" + subject + ", grade=" + grade + "]";
 	}
-	
-	
 
 }

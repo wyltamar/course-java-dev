@@ -40,14 +40,8 @@ public class FirstClass {
 		student4.setEnrollmentDate(enrollmentDate);
 		student4.setSchoolName(schoolName);
 		student4.setSeriesEnrollment(seriesEnrollment);
-		student4.getSubject().setSubject1(subject1);
-		student4.getSubject().setGrade1(grade1);
-		student4.getSubject().setSubject2(subject2);
-		student4.getSubject().setGrade2(grade2);
-		student4.getSubject().setSubject3(subject3);
-		student4.getSubject().setGrade3(grade3);
-		student4.getSubject().setSubject4(subject4);
-		student4.getSubject().setGrade4(grade4);
+		
+		
 		
 		System.out.println(student4.toString());
 		System.out.println("Student average: "+student4.getStudentAverage());

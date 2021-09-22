@@ -1,5 +1,8 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 	
 	private String name;
@@ -13,15 +16,17 @@ public class Student {
 	private String schoolName;
 	private String seriesEnrollment;
 	
-	private Subject subject = new Subject();
 	
-	public Subject getSubject() {
-		return subject;
+	private List<Subject> subjects = new ArrayList<Subject>();
+	
+	public void setSubjects(List<Subject> subjects) {
+		this.subjects = subjects;
 	}
 	
-	public void setSubject(Subject subject) {
-		this.subject = subject;
+	public List<Subject> getSubjects() {
+		return subjects;
 	}
+	
 	
 	/*About object constructor*/
 	
@@ -124,7 +129,7 @@ public class Student {
 	}
 
 		public double getStudentAverage() {
-		return (subject.getGrade1() + subject.getGrade2() + subject.getGrade3() + subject.getGrade4())/4;
+		return 0;
 	}
 	
 	public boolean getApprovedStudent() {
@@ -143,7 +148,7 @@ public class Student {
 		return "Student [name=" + name + ", age=" + age + ", birthDate=" + birthDate + ", generalRecord="
 				+ generalRecord + ", cpfNumber=" + cpfNumber + ", matherName=" + matherName + ", fatherName="
 				+ fatherName + ", enrollmentDate=" + enrollmentDate + ", schoolName=" + schoolName
-				+ ", seriesEnrollment=" + seriesEnrollment + ", subject=" + subject + "]";
+				+ ", seriesEnrollment=" + seriesEnrollment + "]";
 	}
 
 	@Override
