@@ -22,12 +22,13 @@ public class FirstClass {
 		String seriesEnrollment = JOptionPane.showInputDialog("Enter series:");
 		
 		Student student4 = new Student();
-		Subject subjects = new Subject();
 		
 		for(int i = 0; i <= 3; i++ ) {
 			String subject = JOptionPane.showInputDialog("Enter with subject "+(i + 1));
-			subjects.setSubject(subject);
 			double grade = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade: "+(i + 1)));
+			
+			Subject subjects = new Subject();
+			subjects.setSubject(subject);
 			subjects.setGrade(grade);
 			
 			student4.getSubjects().add(subjects);
