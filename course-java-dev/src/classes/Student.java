@@ -138,11 +138,17 @@ public class Student {
 		return addNote/subjects.size();
 	}
 	
-	public boolean getApprovedStudent() {
+	public String getApprovedStudent() {
 		double average = this.getStudentAverage();
 		
-		if(average >= 70) return true;
-		else return false;
+		if(average >= 50) {
+			if(average >= 70) {
+				return "Approved student";
+			}else {
+				return "Student in recory";
+			}
+		}
+		else return "Disapproved student";
 	}
 
 	
