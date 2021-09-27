@@ -90,10 +90,15 @@ public class FirstClass {
 		}
 
 		for (Student student : students) {
-			System.out.println(student.toString());
-			System.out.println("Student average: " + student.getStudentAverage());
-			System.out.println("Result: " + student.getApprovedStudent());
-			System.out.println("==============================================================================");
+			
+			if(student.getName().equalsIgnoreCase("Wyltamar")) {
+				
+				System.out.println(student.toString());
+				System.out.println("Student average: " + student.getStudentAverage());
+				System.out.println("Result: " + student.getApprovedStudent());
+				System.out.println("==============================================================================");
+				break;
+			}
 
 		}
 
