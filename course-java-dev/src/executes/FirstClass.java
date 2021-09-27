@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import classes.Student;
 import classes.Subject;
 
+
 public class FirstClass {
 
 	/* Main is a method auto execute in Java */
@@ -93,15 +94,22 @@ public class FirstClass {
 			
 			if(student.getName().equalsIgnoreCase("Wyltamar")) {
 				
+				students.remove(student);
+			}
+			if (!students.isEmpty())  {
 				System.out.println(student.toString());
 				System.out.println("Student average: " + student.getStudentAverage());
 				System.out.println("Result: " + student.getApprovedStudent());
 				System.out.println("==============================================================================");
-				break;
+			}
+			
+			System.out.println("Students who where on the list: "+student.getName());
+			for (Subject subject : student.getSubjects()) {
+				System.out.println("Sbuject's student:"+subject.getSubject());
 			}
 
 		}
-
+		
 	}
 
 }
