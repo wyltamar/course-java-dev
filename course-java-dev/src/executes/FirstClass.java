@@ -54,7 +54,7 @@ public class FirstClass {
 			 * student4.setSeriesEnrollment(seriesEnrollment);
 			 */
 
-			for (int i = 0; i <= 3; i++) {
+			for (int i = 0; i < 2; i++) {
 
 				Subject subjects = new Subject();
 
@@ -78,7 +78,7 @@ public class FirstClass {
 					int position = 1;
 
 					int optionUser = Integer
-							.parseInt(JOptionPane.showInputDialog("Enter with number of subject: 1, 2, 3, 4"));
+							.parseInt(JOptionPane.showInputDialog("Enter with number of subject: 1, 2"));
 					student4.getSubjects().remove(optionUser - position);
 					position++;
 
@@ -89,25 +89,22 @@ public class FirstClass {
 			students.add(student4);
 
 		}
-
-		for (Student student : students) {
+		
+		for(int index = 0; index < students.size(); index++) {
 			
-			if(student.getName().equalsIgnoreCase("Wyltamar")) {
+			Student student = students.get(index);
+			
+			System.out.println("Student "+(index + 1)+": "+student.getName());
+			System.out.println("Average: "+student.getStudentAverage());
+			System.out.println("Result: "+student.getApprovedStudent());
+			
+			for(int index2= 0 ; index2 < student.getSubjects().size(); index2++ ) {
 				
-				students.remove(student);
+				Subject subject = student.getSubjects().get(index2);
+				System.out.println("Subject "+(index2 + 1)+":" +subject.getSubject());
 			}
-			if (!students.isEmpty())  {
-				System.out.println(student.toString());
-				System.out.println("Student average: " + student.getStudentAverage());
-				System.out.println("Result: " + student.getApprovedStudent());
-				System.out.println("==============================================================================");
-			}
+			System.out.println("---------------------------------------------");
 			
-			System.out.println("Students who where on the list: "+student.getName());
-			for (Subject subject : student.getSubjects()) {
-				System.out.println("Sbuject's student:"+subject.getSubject());
-			}
-
 		}
 		
 	}
