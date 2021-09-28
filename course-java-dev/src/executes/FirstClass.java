@@ -94,6 +94,22 @@ public class FirstClass {
 			
 			Student student = students.get(index);
 			
+			if(student.getName().equalsIgnoreCase("Wyltamar")) {
+				
+				Student toReplace = new Student();
+				toReplace.setName("Replace name");
+				
+				Subject subject = new Subject();
+				subject.setSubject("Matemática");
+				subject.setGrade(90);
+				
+				toReplace.getSubjects().add(subject);
+
+				students.set(index, toReplace);
+				student = students.get(index);
+				
+			}
+			
 			System.out.println("Student "+(index + 1)+": "+student.getName());
 			System.out.println("Average: "+student.getStudentAverage());
 			System.out.println("Result: "+student.getApprovedStudent());
