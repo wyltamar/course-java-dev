@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import classes.Student;
 import classes.Subject;
+import statics.StudentStatus;
 
 
 public class FirstClass {
@@ -15,8 +16,11 @@ public class FirstClass {
 	public static void main(String[] args) {
 
 		List<Student> students = new ArrayList<Student>();
+		List<Student> approvedStudents = new ArrayList<Student>();
+		List<Student> recoveryStudents = new ArrayList<Student>();
+		List<Student> disapprovedStudents = new ArrayList<Student>();
 
-		for (int qnt = 0; qnt <= 1; qnt++) {
+		for (int qnt = 0; qnt <= 4; qnt++) {
 
 			Student student4 = new Student();
 
@@ -54,7 +58,7 @@ public class FirstClass {
 			 * student4.setSeriesEnrollment(seriesEnrollment);
 			 */
 
-			for (int i = 0; i < 2; i++) {
+			for (int i = 0; i < 1; i++) {
 
 				Subject subjects = new Subject();
 
@@ -90,37 +94,36 @@ public class FirstClass {
 
 		}
 		
-		for(int index = 0; index < students.size(); index++) {
+		for(Student student : students) {
 			
-			Student student = students.get(index);
-			
-			if(student.getName().equalsIgnoreCase("Wyltamar")) {
-				
-				Student toReplace = new Student();
-				toReplace.setName("Replace name");
-				
-				Subject subject = new Subject();
-				subject.setSubject("Matemática");
-				subject.setGrade(90);
-				
-				toReplace.getSubjects().add(subject);
-
-				students.set(index, toReplace);
-				student = students.get(index);
-				
+			if(student.getApprovedStudent().equalsIgnoreCase(StudentStatus.APPROVED)) {
+				approvedStudents.add(student);
+			}
+			else if(student.getApprovedStudent().equalsIgnoreCase(StudentStatus.RECOVERY)) {
+				recoveryStudents.add(student);
+			}
+			else {
+				disapprovedStudents.add(student);
 			}
 			
-			System.out.println("Student "+(index + 1)+": "+student.getName());
-			System.out.println("Average: "+student.getStudentAverage());
-			System.out.println("Result: "+student.getApprovedStudent());
-			
-			for(int index2= 0 ; index2 < student.getSubjects().size(); index2++ ) {
-				
-				Subject subject = student.getSubjects().get(index2);
-				System.out.println("Subject "+(index2 + 1)+":" +subject.getSubject());
-			}
-			System.out.println("---------------------------------------------");
-			
+		}
+		
+		System.out.println("---------------Approved List-----------------------");
+		for (Student student2 : approvedStudents) {
+			System.out.println("Name: "+student2.getName());
+			System.out.println("Result: "+student2.getApprovedStudent()+ " with average: "+student2.getStudentAverage());
+		}
+		
+		System.out.println("---------------Recovery List-----------------------");
+		for (Student student3 : recoveryStudents) {
+			System.out.println("Name: "+student3.getName());
+			System.out.println("Result: "+student3.getApprovedStudent()+ " with average: "+student3.getStudentAverage());
+		}
+		
+		System.out.println("---------------Disapproved List-----------------------");
+		for (Student student4 : disapprovedStudents) {
+			System.out.println("Name: "+student4.getName());
+			System.out.println("Result: "+student4.getApprovedStudent()+ " with average: "+student4.getStudentAverage());
 		}
 		
 	}
