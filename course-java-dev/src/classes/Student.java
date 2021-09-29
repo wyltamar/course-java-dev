@@ -3,6 +3,8 @@ package classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import statics.StudentStatus;
+
 public class Student {
 	
 	private String name;
@@ -143,12 +145,12 @@ public class Student {
 		
 		if(average >= 50) {
 			if(average >= 70) {
-				return "Approved student";
+				return StudentStatus.APPROVED;
 			}else {
-				return "Student in recory";
+				return StudentStatus.RECOVERY;
 			}
 		}
-		else return "Disapproved student";
+		else return StudentStatus.DISAPPROVED;
 	}
 
 	
