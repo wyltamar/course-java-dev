@@ -1,6 +1,7 @@
 package executes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -16,9 +17,8 @@ public class FirstClass {
 	public static void main(String[] args) {
 
 		List<Student> students = new ArrayList<Student>();
-		List<Student> approvedStudents = new ArrayList<Student>();
-		List<Student> recoveryStudents = new ArrayList<Student>();
-		List<Student> disapprovedStudents = new ArrayList<Student>();
+		
+		HashMap<String, List<Student>> resultStudents = new HashMap<String, List<Student>>();
 
 		for (int qnt = 0; qnt <= 4; qnt++) {
 
@@ -94,34 +94,38 @@ public class FirstClass {
 
 		}
 		
+		resultStudents.put(StudentStatus.APPROVED, new ArrayList<Student>());
+		resultStudents.put(StudentStatus.RECOVERY, new ArrayList<Student>());
+		resultStudents.put(StudentStatus.DISAPPROVED, new ArrayList<Student>());
+		
 		for(Student student : students) {
 			
 			if(student.getApprovedStudent().equalsIgnoreCase(StudentStatus.APPROVED)) {
-				approvedStudents.add(student);
+				resultStudents.get(StudentStatus.APPROVED).add(student);
 			}
 			else if(student.getApprovedStudent().equalsIgnoreCase(StudentStatus.RECOVERY)) {
-				recoveryStudents.add(student);
+				resultStudents.get(StudentStatus.RECOVERY).add(student);
 			}
 			else {
-				disapprovedStudents.add(student);
+				resultStudents.get(StudentStatus.DISAPPROVED).add(student);
 			}
 			
 		}
 		
 		System.out.println("---------------Approved List-----------------------");
-		for (Student student2 : approvedStudents) {
+		for (Student student2 : resultStudents.get(StudentStatus.APPROVED)) {
 			System.out.println("Name: "+student2.getName());
 			System.out.println("Result: "+student2.getApprovedStudent()+ " with average: "+student2.getStudentAverage());
 		}
 		
 		System.out.println("---------------Recovery List-----------------------");
-		for (Student student3 : recoveryStudents) {
+		for (Student student3 : resultStudents.get(StudentStatus.RECOVERY)) {
 			System.out.println("Name: "+student3.getName());
 			System.out.println("Result: "+student3.getApprovedStudent()+ " with average: "+student3.getStudentAverage());
 		}
 		
 		System.out.println("---------------Disapproved List-----------------------");
-		for (Student student4 : disapprovedStudents) {
+		for (Student student4 : resultStudents.get(StudentStatus.DISAPPROVED)) {
 			System.out.println("Name: "+student4.getName());
 			System.out.println("Result: "+student4.getApprovedStudent()+ " with average: "+student4.getStudentAverage());
 		}
