@@ -10,17 +10,21 @@ import classes.Student;
 import classes.Subject;
 import statics.StudentStatus;
 
-
 public class FirstClass {
 
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Enter login:");
+		String password = JOptionPane.showInputDialog("Enter password");
+		
+		if(login.equals("admin") && password.equals("admin")) {
 
 		List<Student> students = new ArrayList<Student>();
 		
 		HashMap<String, List<Student>> resultStudents = new HashMap<String, List<Student>>();
 
-		for (int qnt = 0; qnt <= 4; qnt++) {
+		for (int qnt = 0; qnt <= 3; qnt++) {
 
 			Student student4 = new Student();
 
@@ -130,6 +134,7 @@ public class FirstClass {
 			System.out.println("Result: "+student4.getApprovedStudent()+ " with average: "+student4.getStudentAverage());
 		}
 		
+		}
+		else JOptionPane.showMessageDialog(null, "Incorrect login or password");
 	}
-
 }
