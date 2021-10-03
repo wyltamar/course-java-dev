@@ -5,15 +5,8 @@ import java.util.List;
 
 import statics.StudentStatus;
 
-public class Student {
+public class Student extends Person {
 	
-	private String name;
-	private int age;
-	private String birthDate;
-	private String generalRecord;
-	private String cpfNumber;
-	private String matherName;
-	private String fatherName;
 	private String enrollmentDate;
 	private String schoolName;
 	private String seriesEnrollment;
