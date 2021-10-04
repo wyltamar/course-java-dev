@@ -10,23 +10,27 @@ public class TestingChildCalsses {
 		
 		Student student = new Student();
 		student.setName("João Filho");
-		student.setAge(23);
+		student.setAge(19);
 		student.setMatherName("Maria Livanira");
+		
 		
 		Director director = new Director();
 		director.setName("Slvino Alvino");
 		director.setTitulation("Pedagogo");
 		director.setDiretionTime(5);
+		director.setAge(17);
 		
 		Secretary secretary = new Secretary();
 		secretary.setName("Joelma Campos");
 		secretary.setExperience("04 anos");
 		secretary.setCpfNumber("000934772334");
+		secretary.setAge(20);
 		
 		
-		System.out.println(student);
-		System.out.println(director);
-		System.out.println(secretary);
+		System.out.println(student+ " is older age? " + student.olderPerson());
+		System.out.println(director+ " is older age? "+ director.olderPerson());
+		System.out.println(secretary+ " is older age? "+ secretary.olderPerson());
+		
 		
 	}
 

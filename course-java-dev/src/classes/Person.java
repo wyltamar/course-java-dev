@@ -53,5 +53,7 @@ public class Person {
 		this.fatherName = fatherName;
 	}
 	
-	
+	public boolean olderPerson() {
+		return this.age >= 18;
+	}
 }

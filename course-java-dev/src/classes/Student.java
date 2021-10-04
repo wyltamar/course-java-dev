@@ -189,7 +189,10 @@ public class Student extends Person {
 		return true;
 	}
 	
-	
-	
+	@Override
+	public boolean olderPerson() {
+		
+		return super.age >= 21;
+	}
 
 }
