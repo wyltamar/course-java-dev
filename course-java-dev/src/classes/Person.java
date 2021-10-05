@@ -1,6 +1,6 @@
 package classes;
 
-abstract class Person {
+public abstract class Person {
 	
 	protected String name;
 	protected int age;
@@ -57,5 +57,5 @@ abstract class Person {
 		return this.age >= 18;
 	}
 	
-	abstract double getWage();
+	public abstract double getWage();
 }
