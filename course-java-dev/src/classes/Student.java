@@ -195,4 +195,9 @@ public class Student extends Person {
 		return super.age >= 21;
 	}
 
+	@Override
+	public double getWage() {
+		return 330.00;
+	}
+
 }
