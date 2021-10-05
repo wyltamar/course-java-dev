@@ -33,6 +33,9 @@ public class Director extends Person {
 				+ fatherName + "]";
 	}
 	
-	
+	@Override
+	public abstract double getWage(){
+	    return 4200.00 + (4200 * 0.05 );
+	}
 
 }
