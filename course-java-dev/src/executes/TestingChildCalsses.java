@@ -1,6 +1,7 @@
 package executes;
 
 import classes.Director;
+import classes.Person;
 import classes.Secretary;
 import classes.Student;
 
@@ -34,6 +35,17 @@ public class TestingChildCalsses {
 		System.out.println("Student Wage: "+student.getWage());
 		System.out.println("Director Wage: "+director.getWage());
 		System.out.println("Secretary Wage: "+secretary.getWage());
+		
+		System.out.println("=========================================");
+		
+		test(student);
+		test(director);
+		test(secretary);
+	}
+	
+	public static void test(Person person) {
+		System.out.println("This person is = "+person.getName()
+		+ " and the wage is = "+person.getWage());
 	}
 
 }
