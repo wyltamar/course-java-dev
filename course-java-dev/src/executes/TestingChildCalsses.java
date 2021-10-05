@@ -31,7 +31,9 @@ public class TestingChildCalsses {
 		System.out.println(director+ " is older age? "+ director.olderPerson());
 		System.out.println(secretary+ " is older age? "+ secretary.olderPerson());
 		
-		
+		System.out.println("Student Wage: "+student.getWage());
+		System.out.println("Director Wage: "+director.getWage());
+		System.out.println("Secretary Wage: "+secretary.getWage());
 	}
 
 }
