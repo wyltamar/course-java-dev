@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import classes.Secretary;
 import classes.Student;
 import classes.Subject;
 import statics.StudentStatus;
@@ -18,7 +19,11 @@ public class FirstClass {
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
-		if(login.equals("admin") && password.equals("admin")) {
+		Secretary secretary = new Secretary();
+		secretary.setLogin(login);
+		secretary.setPassword(password);
+		
+		if(secretary.autenticate()) {
 
 		List<Student> students = new ArrayList<Student>();
 		

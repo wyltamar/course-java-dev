@@ -1,10 +1,15 @@
 package classes;
 
-public class Secretary extends Person {
+import interfaces.AllowAccess;
+
+public class Secretary extends Person implements AllowAccess {
 	
 	private String record;
 	private String officeLevel;
 	private String experience;
+	
+	private String login;
+	private String password;
 	
 	public String getRecord() {
 		return record;
@@ -35,6 +40,25 @@ public class Secretary extends Person {
 	public double getWage(){
 	   return 1500.00;
 	}
+	@Override
+	public boolean autenticate() {
+		
+		return login.equals("admin") && password.equals("admin");
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	
 	
 	
