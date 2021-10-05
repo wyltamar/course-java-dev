@@ -34,7 +34,7 @@ public class Director extends Person {
 	}
 	
 	@Override
-	public abstract double getWage(){
+	public  double getWage(){
 	    return 4200.00 + (4200 * 0.05 );
 	}
 
