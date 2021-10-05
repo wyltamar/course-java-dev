@@ -31,7 +31,10 @@ public class Secretary extends Person {
 				+ ", cpfNumber=" + cpfNumber + ", matherName=" + matherName + ", fatherName=" + fatherName + "]";
 	}
 	
-	
+	@Override
+	public double getWage(){
+	   return 1500.00;
+	}
 	
 	
 	
