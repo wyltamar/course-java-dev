@@ -56,4 +56,6 @@ abstract class Person {
 	public boolean olderPerson() {
 		return this.age >= 18;
 	}
+	
+	abstract double getWage();
 }
