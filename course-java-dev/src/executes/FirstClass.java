@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import auxiliary.classes.AutenticateFunction;
 import classes.Secretary;
 import classes.Student;
 import classes.Subject;
@@ -20,9 +21,11 @@ public class FirstClass {
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
+		AutenticateFunction autenticate = new AutenticateFunction();
+		
 		AllowAccess allowAccess = new Secretary(login, password);
 		
-		if(allowAccess.autenticate()) {
+		if(autenticate.autenticateJavaCourse(allowAccess)) {
 
 		List<Student> students = new ArrayList<Student>();
 		
