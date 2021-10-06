@@ -41,7 +41,7 @@ public class Secretary extends Person implements AllowAccess {
 	   return 1500.00;
 	}
 	@Override
-	public boolean autenticate() {
+	public boolean autenticate(String login, String password) {
 		
 		return login.equals("admin") && password.equals("admin");
 	}

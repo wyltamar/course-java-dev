@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import classes.Secretary;
 import classes.Student;
 import classes.Subject;
+import interfaces.AllowAccess;
 import statics.StudentStatus;
 
 public class FirstClass {
@@ -19,11 +20,8 @@ public class FirstClass {
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
-		Secretary secretary = new Secretary();
-		secretary.setLogin(login);
-		secretary.setPassword(password);
 		
-		if(secretary.autenticate()) {
+		if(new Secretary().autenticate(login,password)) {
 
 		List<Student> students = new ArrayList<Student>();
 		
@@ -140,6 +138,6 @@ public class FirstClass {
 		}
 		
 		}
-		else JOptionPane.showMessageDialog(null, "Incorrect login or password");
+		else JOptionPane.showMessageDialog(null, "Access denied! Incorrect login or password");
 	}
 }
