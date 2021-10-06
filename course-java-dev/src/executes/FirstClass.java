@@ -7,10 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import auxiliary.classes.AutenticateFunction;
+import classes.Director;
 import classes.Secretary;
 import classes.Student;
 import classes.Subject;
-import interfaces.AllowAccess;
 import statics.StudentStatus;
 
 public class FirstClass {
@@ -22,9 +22,9 @@ public class FirstClass {
 		String password = JOptionPane.showInputDialog("Enter password");
 		
 		
-		AllowAccess allowAccess = new Secretary(login, password);
 		
-		if(new AutenticateFunction(allowAccess).autenticate()) {
+		if(new AutenticateFunction(new Secretary(login, password)).autenticate() || 
+			new AutenticateFunction(new Director(login, password)).autenticate()) {
 
 		List<Student> students = new ArrayList<Student>();
 		

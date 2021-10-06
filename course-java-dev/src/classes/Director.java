@@ -1,11 +1,24 @@
 package classes;
 
-public class Director extends Person {
+import interfaces.AllowAccess;
+
+public class Director extends Person implements AllowAccess {
 	
 	private String educationRecord;
 	private int diretionTime;
 	private String titulation;
 	
+	private String login;
+	private String password;
+	
+	public Director() {
+		
+	}
+	
+	public Director(String login, String password) {
+		this.login = login;
+		this.password = password;
+	}
 	
 	public String getEducationRecord() {
 		return educationRecord;
@@ -36,6 +49,17 @@ public class Director extends Person {
 	@Override
 	public  double getWage(){
 	    return 4200.00 + (4200 * 0.05 );
+	}
+	@Override
+	public boolean autenticate(String login, String password) {
+		this.login = login;
+		this.password = password;
+		return autenticate();
+	}
+	@Override
+	public boolean autenticate() {
+		
+		return login.equals("wyl") && password.equals("123");
 	}
 
 }
