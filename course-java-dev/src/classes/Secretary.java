@@ -11,6 +11,15 @@ public class Secretary extends Person implements AllowAccess {
 	private String login;
 	private String password;
 	
+	public Secretary(String login, String password) {
+		this.login = login;
+		this.password = password;
+	}
+	
+	public Secretary() {
+		
+	}
+	
 	public String getRecord() {
 		return record;
 	}
@@ -40,24 +49,36 @@ public class Secretary extends Person implements AllowAccess {
 	public double getWage(){
 	   return 1500.00;
 	}
-	@Override
-	public boolean autenticate(String login, String password) {
-		
-		return login.equals("admin") && password.equals("admin");
-	}
+	
+
 	public String getLogin() {
 		return login;
 	}
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
+	@Override
+	public boolean autenticate(String login, String password) {
+		this.login = login;
+		this.password = password;
+		return autenticate();
+	}
+
+	@Override
+	public boolean autenticate() {
+
+		return login.equals("admin") && password.equals("admin");
+	}
 	
 	
 	

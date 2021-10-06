@@ -20,8 +20,9 @@ public class FirstClass {
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
+		AllowAccess allowAccess = new Secretary(login, password);
 		
-		if(new Secretary().autenticate(login,password)) {
+		if(allowAccess.autenticate()) {
 
 		List<Student> students = new ArrayList<Student>();
 		
