@@ -21,11 +21,10 @@ public class FirstClass {
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
-		AutenticateFunction autenticate = new AutenticateFunction();
 		
 		AllowAccess allowAccess = new Secretary(login, password);
 		
-		if(autenticate.autenticateJavaCourse(allowAccess)) {
+		if(new AutenticateFunction(allowAccess).autenticate()) {
 
 		List<Student> students = new ArrayList<Student>();
 		
