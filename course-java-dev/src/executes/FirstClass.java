@@ -147,6 +147,13 @@ public class FirstClass {
 		
 		}catch (Exception e) {
 			e.printStackTrace();
+			
+			for(int i = 0; i < e.getStackTrace().length; i++) {
+				System.out.println("Eror class:"+e.getStackTrace()[i].getClassName());
+				System.out.println("Eror Metohd:"+e.getStackTrace()[i].getMethodName());
+				System.out.println("Eror line:"+e.getStackTrace()[i].getLineNumber());
+			}
+			
 			JOptionPane.showMessageDialog(null, "Processing error!");
 		}
 	}
