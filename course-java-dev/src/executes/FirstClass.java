@@ -18,6 +18,8 @@ public class FirstClass {
 	/* Main is a method auto execute in Java */
 	public static void main(String[] args) {
 		
+		try {
+		
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
 		
@@ -142,5 +144,10 @@ public class FirstClass {
 		
 		}
 		else JOptionPane.showMessageDialog(null, "Access denied! Incorrect login or password");
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Processing error!");
+		}
 	}
 }
