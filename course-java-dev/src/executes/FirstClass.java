@@ -72,7 +72,7 @@ public class FirstClass {
 
 			for (int i = 0; i < 1; i++) {
 
-				Subject subjects = null;
+				Subject subjects = new Subject();
 
 				String subject = JOptionPane.showInputDialog("Enter with subject " + (i + 1));
 				subjects.setSubject(subject);
