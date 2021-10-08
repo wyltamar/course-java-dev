@@ -1,8 +1,11 @@
 package executes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -11,6 +14,7 @@ import classes.Director;
 import classes.Secretary;
 import classes.Student;
 import classes.Subject;
+import exeeptions.NoteProcessingException;
 import statics.StudentStatus;
 
 public class FirstClass {
@@ -20,10 +24,17 @@ public class FirstClass {
 		
 		try {
 		
+
+			try {
+				File fil = new File("c://lines.txt");
+				Scanner scanner = new Scanner(fil);
+			}
+			catch(FileNotFoundException e) {
+				throw new NoteProcessingException("Error at studend processing notes");
+			}
+			
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
-		
-		
 		
 		if(new AutenticateFunction(new Secretary(login, password)).autenticate() || 
 			new AutenticateFunction(new Director(login, password)).autenticate()) {
