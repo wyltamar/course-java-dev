@@ -72,7 +72,7 @@ public class FirstClass {
 
 			for (int i = 0; i < 1; i++) {
 
-				Subject subjects = new Subject();
+				Subject subjects = null;
 
 				String subject = JOptionPane.showInputDialog("Enter with subject " + (i + 1));
 				subjects.setSubject(subject);
@@ -151,10 +151,13 @@ public class FirstClass {
 			
 			e.printStackTrace();
 			
+			System.out.println("Message error:"+e.getMessage());
+			
 			for(int i = 0; i < e.getStackTrace().length; i++) {
-				output.append("\n Eror class:"+e.getStackTrace()[i].getClassName());
-				output.append("\n Eror Metohd:"+e.getStackTrace()[i].getMethodName());
-				output.append("\n Eror line:"+e.getStackTrace()[i].getLineNumber());
+				output.append("\n Eror class: "+e.getStackTrace()[i].getClassName());
+				output.append("\n Eror Metohd: "+e.getStackTrace()[i].getMethodName());
+				output.append("\n Eror line: "+e.getStackTrace()[i].getLineNumber());
+				output.append("\n Class: "+e.getClass().getName());
 			}
 			
 			JOptionPane.showMessageDialog(null, "Processing error!" +output.toString());
