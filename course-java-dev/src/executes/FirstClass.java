@@ -32,7 +32,7 @@ public class FirstClass {
 		
 		HashMap<String, List<Student>> resultStudents = new HashMap<String, List<Student>>();
 
-		for (int qnt = 0; qnt <= 3; qnt++) {
+		for (int qnt = 0; qnt < 1; qnt++) {
 
 			Student student4 = new Student();
 
@@ -177,6 +177,8 @@ public class FirstClass {
 			}
 			
 			JOptionPane.showMessageDialog(null, "Processing error!" +output.toString());
+		}finally { //always run
+			JOptionPane.showMessageDialog(null, "Thank you by learning Java with me!");
 		}
 	}
 }
