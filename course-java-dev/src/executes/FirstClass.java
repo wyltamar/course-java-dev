@@ -146,15 +146,18 @@ public class FirstClass {
 		else JOptionPane.showMessageDialog(null, "Access denied! Incorrect login or password");
 		
 		}catch (Exception e) {
+			
+			StringBuilder output = new StringBuilder();
+			
 			e.printStackTrace();
 			
 			for(int i = 0; i < e.getStackTrace().length; i++) {
-				System.out.println("Eror class:"+e.getStackTrace()[i].getClassName());
-				System.out.println("Eror Metohd:"+e.getStackTrace()[i].getMethodName());
-				System.out.println("Eror line:"+e.getStackTrace()[i].getLineNumber());
+				output.append("\n Eror class:"+e.getStackTrace()[i].getClassName());
+				output.append("\n Eror Metohd:"+e.getStackTrace()[i].getMethodName());
+				output.append("\n Eror line:"+e.getStackTrace()[i].getLineNumber());
 			}
 			
-			JOptionPane.showMessageDialog(null, "Processing error!");
+			JOptionPane.showMessageDialog(null, "Processing error!" +output.toString());
 		}
 	}
 }
