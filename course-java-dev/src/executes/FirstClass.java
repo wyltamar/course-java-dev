@@ -39,11 +39,11 @@ public class FirstClass {
 			String name = JOptionPane.showInputDialog("Enter student " + (qnt + 1) );
 			student4.setName(name);
 
-			/*
-			 * int age = Integer.parseInt(JOptionPane.showInputDialog("Enter age:"));
-			 * student4.setAge(age);
-			 * 
-			 * 
+			
+			  int age = Integer.parseInt(JOptionPane.showInputDialog("Enter age:"));
+			  student4.setAge(age);
+			  
+			/* 
 			 * String birthDate = JOptionPane.showInputDialog("Enter birth date:");
 			 * student4.setBirthDate(birthDate);
 			 * 
@@ -145,7 +145,23 @@ public class FirstClass {
 		}
 		else JOptionPane.showMessageDialog(null, "Access denied! Incorrect login or password");
 		
-		}catch (Exception e) {
+		}catch(NumberFormatException e) {
+			e.printStackTrace();
+			
+			StringBuilder output = new StringBuilder();
+			
+			for(int i = 0; i < e.getStackTrace().length; i++) {
+				output.append("\n File: "+e.getStackTrace()[i].getFileName());
+				output.append("\n Class: "+e.getStackTrace()[i].getClassName());
+				output.append("\n Method: "+e.getStackTrace()[i].getMethodName());
+				output.append("\n Error Line: "+e.getStackTrace()[i].getLineNumber());
+				
+			}
+			JOptionPane.showMessageDialog(null, "Number coversion error! "+output);
+			
+		}
+		
+		catch (Exception e) {
 			
 			StringBuilder output = new StringBuilder();
 			
