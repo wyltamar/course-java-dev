@@ -30,7 +30,7 @@ public class FirstClass {
 				Scanner scanner = new Scanner(fil);
 			}
 			catch(FileNotFoundException e) {
-				throw new NoteProcessingException("Error at studend processing notes");
+				throw new NoteProcessingException(e.getMessage());
 			}
 			
 		String login = JOptionPane.showInputDialog("Enter login:");
