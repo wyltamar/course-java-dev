@@ -23,15 +23,8 @@ public class FirstClass {
 	public static void main(String[] args) {
 		
 		try {
-		
-
-			try {
-				File fil = new File("c://lines.txt");
-				Scanner scanner = new Scanner(fil);
-			}
-			catch(FileNotFoundException e) {
-				throw new NoteProcessingException(e.getMessage());
-			}
+			
+		readFile();
 			
 		String login = JOptionPane.showInputDialog("Enter login:");
 		String password = JOptionPane.showInputDialog("Enter password");
@@ -156,23 +149,7 @@ public class FirstClass {
 		}
 		else JOptionPane.showMessageDialog(null, "Access denied! Incorrect login or password");
 		
-		}catch(NumberFormatException e) {
-			e.printStackTrace();
-			
-			StringBuilder output = new StringBuilder();
-			
-			for(int i = 0; i < e.getStackTrace().length; i++) {
-				output.append("\n File: "+e.getStackTrace()[i].getFileName());
-				output.append("\n Class: "+e.getStackTrace()[i].getClassName());
-				output.append("\n Method: "+e.getStackTrace()[i].getMethodName());
-				output.append("\n Error Line: "+e.getStackTrace()[i].getLineNumber());
-				
-			}
-			JOptionPane.showMessageDialog(null, "Number coversion error! "+output);
-			
-		}
-		
-		catch (Exception e) {
+		}catch (Exception e) {
 			
 			StringBuilder output = new StringBuilder();
 			
@@ -191,5 +168,12 @@ public class FirstClass {
 		}finally { //always run
 			JOptionPane.showMessageDialog(null, "Thank you by learning Java with me!");
 		}
+	}
+	public static void readFile() throws FileNotFoundException {
+		
+			File fil = new File("c://lines.txt");
+			Scanner scanner = new Scanner(fil);
+		
+		
 	}
 }
