@@ -14,7 +14,6 @@ import classes.Director;
 import classes.Secretary;
 import classes.Student;
 import classes.Subject;
-import exeeptions.NoteProcessingException;
 import statics.StudentStatus;
 
 public class FirstClass {
@@ -81,8 +80,14 @@ public class FirstClass {
 				String subject = JOptionPane.showInputDialog("Enter with subject " + (i + 1));
 				subjects.setSubject(subject);
 
-				double grade = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade: " + (i + 1)));
-				subjects.setGrade(grade);
+				double[] grades = new double[4];
+				for(int j = 0; j < 4; j++) {
+
+					double grade = Double.parseDouble(JOptionPane.showInputDialog("Enter with grade: " + (j + 1)));
+					grades[j] = grade;
+										
+				}
+				subjects.setGrade(grades);
 
 				student4.getSubjects().add(subjects);
 			}

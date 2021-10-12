@@ -1,9 +1,11 @@
 package classes;
 
+import java.util.Arrays;
+
 public class Subject {
 
 	private String subject;
-	private double grade;
+	private double[] grade = new double[4];
 	
 	public Subject() {
 		
@@ -17,21 +19,32 @@ public class Subject {
 		this.subject = subject;
 	}
 
-	public double getGrade() {
+	
+	public double[] getGrade() {
 		return grade;
 	}
 
-	public void setGrade(double grade) {
+	public void setGrade(double[] grade) {
 		this.grade = grade;
 	}
+	
+	public double averageGrade() {
+		double totalAdition = 0.0;
+		
+		for(int i = 0; i < grade.length; i++) {
+			
+			totalAdition += grade[i];
+		}
+		
+		return totalAdition / grade.length;
+	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(grade);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + Arrays.hashCode(grade);
 		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
 		return result;
 	}
@@ -45,7 +58,7 @@ public class Subject {
 		if (getClass() != obj.getClass())
 			return false;
 		Subject other = (Subject) obj;
-		if (Double.doubleToLongBits(grade) != Double.doubleToLongBits(other.grade))
+		if (!Arrays.equals(grade, other.grade))
 			return false;
 		if (subject == null) {
 			if (other.subject != null)
@@ -57,7 +70,9 @@ public class Subject {
 
 	@Override
 	public String toString() {
-		return "Subject [subject=" + subject + ", grade=" + grade + "]";
+		return "Subject [subject=" + subject + ", grade=" + Arrays.toString(grade) + "]";
 	}
+
+	
 
 }

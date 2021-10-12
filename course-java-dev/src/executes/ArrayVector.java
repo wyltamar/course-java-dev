@@ -1,24 +1,30 @@
 package executes;
 
-import javax.swing.JOptionPane;
+import classes.Student;
+import classes.Subject;
 
 public class ArrayVector {
 
 	public static void main(String[] args) {
+		
+		double[] javaGrades = {9.0,10.0,7.8,8.4};
+		double[] logicaGrades = {80.0,90,7.8,8.4};
 
-		int notes = Integer.parseInt(JOptionPane.showInputDialog("How many positions should the Array have?")); 
+		Student student = new Student();
+		student.setName("Wyltamar Dougals");
+		student.setSchoolName("JDEV Treinamentos");
 		
-		double [] grades = new double[notes];
+		Subject subject = new Subject();
+		subject.setSubject("Java");
+		subject.setGrade(javaGrades);
 		
+		student.getSubjects().add(subject);
 		
-		for(int i = 0; i < grades.length; i++) {
-			
-			grades[i] = Double.parseDouble(JOptionPane.showInputDialog("Inform the grade "+(i+1)));
-		}
+		Subject subject2 = new Subject();
+		subject2.setSubject("Lógica");
+		subject2.setGrade(logicaGrades);
 		
-		for(int i = 0; i < grades.length; i++) {
-			System.out.println("Grade "+(i + 1)+" = "+grades[i]);
-		}
+		student.getSubjects().add(subject2);
 		
 	}
 

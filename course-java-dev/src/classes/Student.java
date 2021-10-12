@@ -128,7 +128,7 @@ public class Student extends Person {
 			double addNote = 0.0;
 			
 			for (Subject subject: subjects) {
-				addNote += subject.getGrade();
+				addNote += subject.averageGrade();
 			}
 		return addNote/subjects.size();
 	}
