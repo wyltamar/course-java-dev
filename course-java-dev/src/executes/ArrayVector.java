@@ -11,10 +11,15 @@ public class ArrayVector {
 		grades[2] = 8.0;
 		grades[3] = 9.0;
 		
-		System.out.println("Note 1 = "+grades[0]);
-		System.out.println("Note 2 = "+grades[1]);
-		System.out.println("Note 3 = "+grades[2]);
-		System.out.println("Note 4 = "+grades[3]);
+		for(int i = 0; i < grades.length; i++) {
+			
+			System.out.println("Note "+(i + 1)+" = "+grades[i]);
+		}
+		
+		for(double i : grades) {
+			System.out.println("grade  = "+i);
+		}
+		
 	}
 
 }
