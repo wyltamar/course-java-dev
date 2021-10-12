@@ -26,6 +26,18 @@ public class ArrayVector {
 		
 		student.getSubjects().add(subject2);
 		
+		System.out.println("------------Datas of student-----------");
+		System.out.println("Name: "+student.getName()+ "enrollment on "+student.getSchoolName());
+		System.out.println("=============Subjects names ===========");
+		
+		for(Subject sub: student.getSubjects()) {
+			
+			System.out.println("Student's subject: "+sub.getSubject());
+			for(int i = 0 ; i < sub.getGrade().length; i++) {
+				System.out.println("Subject "+(i+1)+": "+sub.getGrade()[i]);
+			}
+		}
+		
 	}
 
 }
