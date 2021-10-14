@@ -24,8 +24,6 @@ public class ThreadClass {
 			
 		}.start();
 		
-		/*Competitors threads*/
-		public static void main(String[] args) throws InterruptedException {
 		
 		new Thread() {
 			
@@ -44,9 +42,6 @@ public class ThreadClass {
 			};
 			
 		}.start();
-		
-		
-
 		
 		
 		System.out.println("Finishing code exucute");
