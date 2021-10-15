@@ -5,6 +5,10 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -24,6 +28,24 @@ public class ScreenTimeThread extends JDialog{
 	
 	private JButton btn1 = new JButton("Start");
 	private JButton btn2 = new JButton("Stop");
+	
+	private Runnable thread1 = new Runnable() {
+		
+		@Override
+		public void run() {
+			while(true) {
+				timeThread.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss")
+						.format(Calendar.getInstance().getTime()));
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	};
+	
+	private Thread threadTime1;
 	
 	public ScreenTimeThread() {
 		
@@ -63,9 +85,34 @@ public class ScreenTimeThread extends JDialog{
 		gridBagConstraints.gridy ++;
 		jPanel.add(btn1, gridBagConstraints);
 		
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				threadTime1 = new Thread(thread1);
+				threadTime1.start();
+				btn1.setEnabled(false);
+				btn2.setEnabled(true);
+			}
+		});
+		
+		
 		btn2.setPreferredSize(new Dimension(92,25));
 		gridBagConstraints.gridx ++;
 		jPanel.add(btn2, gridBagConstraints);
+		
+		btn2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				threadTime1.stop();
+				btn2.setEnabled(false);
+				btn1.setEnabled(true);
+				
+			}
+		});
 		
 		add(jPanel, BorderLayout.WEST);
 		/*Will Allways be the last comand */
