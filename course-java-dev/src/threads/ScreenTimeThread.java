@@ -20,51 +20,19 @@ public class ScreenTimeThread extends JDialog{
 	
 	private JPanel jPanel = new JPanel(new GridBagLayout());
 	
-	private JLabel descriptionHour = new JLabel("Time Thread 1");
+	private JLabel descriptionHour = new JLabel("Nome");
 	private JTextField timeThread = new JTextField();
 	
-	private JLabel descriptionHour2 = new JLabel("Time Thread 2");
+	private JLabel descriptionHour2 = new JLabel("Email");
 	private JTextField timeThread2 = new JTextField();
 	
-	private JButton btn1 = new JButton("Start");
+	private JButton btn1 = new JButton("Add");
 	private JButton btn2 = new JButton("Stop");
 	
-	private Runnable thread1 = new Runnable() {
-		
-		@Override
-		public void run() {
-			while(true) {
-				timeThread.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss")
-						.format(Calendar.getInstance().getTime()));
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	};
 	
-	private Runnable thread2 = new Runnable() {
-		
-		@Override
-		public void run() {
-
-			while(true) {
-				timeThread2.setText(new SimpleDateFormat("dd-MM-yyyy hh:mm:ss")
-						.format(Calendar.getInstance().getTime()));
-				
-				try {
-					Thread.sleep(1000);
-				}catch(InterruptedException e){
-					e.printStackTrace();
-				}
-			}
-		}
-	};
+	private ThreadQueueImplementation queue = new ThreadQueueImplementation();
 	
-	private Thread threadTime1;
-	private Thread threadTime2;
+	
 	
 	public ScreenTimeThread() {
 		
@@ -86,7 +54,6 @@ public class ScreenTimeThread extends JDialog{
 		
 		timeThread.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy ++;
-		timeThread.setEditable(false);
 		jPanel.add(timeThread, gridBagConstraints);
 		
 		descriptionHour2.setPreferredSize(new Dimension(200,25));
@@ -95,7 +62,6 @@ public class ScreenTimeThread extends JDialog{
 		
 		timeThread2.setPreferredSize(new Dimension(200,25));
 		gridBagConstraints.gridy ++;
-		timeThread2.setEditable(false);
 		jPanel.add(timeThread2, gridBagConstraints);
 		
 		gridBagConstraints.gridwidth = 1;
@@ -108,17 +74,15 @@ public class ScreenTimeThread extends JDialog{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				threadTime1 = new Thread(thread1);
-				threadTime2 = new Thread(thread2);
-				threadTime1.start();
-				threadTime2.start();
-				btn1.setEnabled(false);
-				btn2.setEnabled(true);
+				ThreadQueueObject object = new ThreadQueueObject();
+				object.setName(timeThread.getText());
+				object.setEmail(timeThread2.getText());
+				
+				
+				queue.add(object);
 			}
 		});
 		
-		btn2.setEnabled(false);
 		btn2.setPreferredSize(new Dimension(92,25));
 		gridBagConstraints.gridx ++;
 		jPanel.add(btn2, gridBagConstraints);
@@ -128,14 +92,11 @@ public class ScreenTimeThread extends JDialog{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				threadTime1.stop();
-				threadTime2.stop();
-				btn2.setEnabled(false);
-				btn1.setEnabled(true);
 				
 			}
 		});
 		
+		queue.start();
 		add(jPanel, BorderLayout.WEST);
 		/*Will Allways be the last comand */
 		setVisible(true);

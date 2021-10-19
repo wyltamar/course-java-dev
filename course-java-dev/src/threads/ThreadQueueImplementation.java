@@ -16,10 +16,12 @@ public class ThreadQueueImplementation extends Thread {
 	@Override
 	public void run() {
 
-		Iterator iteration = pile_queue.iterator();
+		System.out.println("Queue running...");
 		
-		synchronized(iteration) { //block access to this list by other processes
+		while(true) {
+		synchronized(pile_queue) { //block access to this list by other processes
 			
+			Iterator iteration = pile_queue.iterator();
 			while(iteration.hasNext()) { //while it's on the list it will process
 				
 				ThreadQueueObject process = (ThreadQueueObject) iteration.next(); //take the current object
@@ -37,7 +39,7 @@ public class ThreadQueueImplementation extends Thread {
 				iteration.remove();
 				
 				try {
-					Thread.sleep(100); // Give time to unload memory
+					Thread.sleep(1000); // Give time to unload memory
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}	
@@ -50,6 +52,9 @@ public class ThreadQueueImplementation extends Thread {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+		
 		
 	}
+	
 }
