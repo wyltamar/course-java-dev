@@ -26,7 +26,7 @@ public class ScreenTimeThread extends JDialog{
 	private JLabel descriptionHour2 = new JLabel("Email");
 	private JTextField timeThread2 = new JTextField();
 	
-	private JButton btn1 = new JButton("Add");
+	private JButton btn1 = new JButton("Generate");
 	private JButton btn2 = new JButton("Stop");
 	
 	
@@ -74,12 +74,20 @@ public class ScreenTimeThread extends JDialog{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ThreadQueueObject object = new ThreadQueueObject();
-				object.setName(timeThread.getText());
-				object.setEmail(timeThread2.getText());
 				
+				if(queue == null) {
+					queue = new ThreadQueueImplementation();
+					queue.start();
+				}
 				
-				queue.add(object);
+				for(int i = 0; i < 100; i++) {
+					
+					ThreadQueueObject object = new ThreadQueueObject();
+					object.setName(timeThread.getText());
+					object.setEmail(timeThread2.getText()+ "- "+i);
+					
+					queue.add(object);
+				}
 			}
 		});
 		
@@ -92,7 +100,8 @@ public class ScreenTimeThread extends JDialog{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
+				queue.stop();
+				queue = null;
 			}
 		});
 		
