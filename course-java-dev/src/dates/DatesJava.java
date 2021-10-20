@@ -10,13 +10,22 @@ public class DatesJava {
 
 		Date date = new Date();
 		
+		System.out.println("Miliseconds: "+date.getTime());
+		
 		System.out.println("Actual date day: "+date.getDate());
+		
 		System.out.println("Week day: "+date.getDay());
+		
 		System.out.println("Actual hour: "+date.getHours());
+		
 		System.out.println("Actual minutes: "+date.getMinutes());
+		
 		System.out.println("Actual seconds: "+date.getSeconds());
+		
 		System.out.println("Actual time: "+ new Date(21,10,19).getTimezoneOffset());
+		
 		System.out.println("Actual year: " +(date.getYear() + 1900));
+		
 		System.out.println("Actual year: " +(date.getYear() + 1900));
 		
 		/*--------------- Simple Date Format ---------------------------*/
