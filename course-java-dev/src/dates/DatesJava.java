@@ -1,42 +1,17 @@
 package dates;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DatesJava {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		Date date = new Date();
 		
 		System.out.println("Actual date day: "+date.getDate());
-		
 		System.out.println("Week day: "+date.getDay());
-		
-		switch (date.getDay()) {
-		case 0:
-			System.out.println("Sanday");
-			break;
-		case 1:
-			System.out.println("Monday");
-			break;
-		case 2:
-			System.out.println("Twosday");
-			break;
-		case 3:
-			System.out.println("Wednesday");
-			break;
-		case 4:
-			System.out.println("Thursday");
-			break;
-		case 5:
-			System.out.println("Friday");
-			break;
-			
-		default:
-			System.out.println("Saturday");
-			break;
-		}
-		
 		System.out.println("Actual hour: "+date.getHours());
 		System.out.println("Actual minutes: "+date.getMinutes());
 		System.out.println("Actual seconds: "+date.getSeconds());
@@ -44,6 +19,19 @@ public class DatesJava {
 		System.out.println("Actual year: " +(date.getYear() + 1900));
 		System.out.println("Actual year: " +(date.getYear() + 1900));
 		
+		/*--------------- Simple Date Format ---------------------------*/
+		
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyy-MM-dd HH:mm.ss ");
+		System.out.println("Actual date in data base format: " +simpleDateFormat.format(date));
+		
+		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		System.out.println("Actual date in default format and String: " +simpleDateFormat.format(date));
+		
+		simpleDateFormat = new SimpleDateFormat("dd/MM/yyy");
+		System.out.println("Object Date: "+ simpleDateFormat.parse("02/05/1983"));
+		
+		simpleDateFormat = new SimpleDateFormat("dd-MM-yyy");
+		System.out.println("Date Actual: "+simpleDateFormat.format(new Date()));
 		
 	}
 
